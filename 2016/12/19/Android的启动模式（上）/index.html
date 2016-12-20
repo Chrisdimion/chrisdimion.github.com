@@ -8,16 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Android的启动模式（上） | Chris</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欢迎来到我的个人博客">
+  <meta name="description" content="android中的启动模式（上）
+1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的启动模式（上）">
 <meta property="og:url" content="http://yoursite.com/2016/12/19/Android的启动模式（上）/index.html">
 <meta property="og:site_name" content="Chris">
-<meta property="og:description" content="欢迎来到我的个人博客">
-<meta property="og:updated_time" content="2016-12-19T14:35:05.000Z">
+<meta property="og:description" content="android中的启动模式（上）
+1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一">
+<meta property="og:image" content="http://img1.tuicool.com/7rymqa.jpg">
+<meta property="og:updated_time" content="2016-12-20T14:16:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的启动模式（上）">
-<meta name="twitter:description" content="欢迎来到我的个人博客">
+<meta name="twitter:description" content="android中的启动模式（上）
+1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一">
+<meta name="twitter:image" content="http://img1.tuicool.com/7rymqa.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Chris" type="application/atom+xml">
   
@@ -46,8 +51,6 @@
 		  <h1 class="header-author"><a href="/">Chris Zheng</a></h1>
 		</hgroup>
 
-		
-		<p class="header-subtitle">This is My Android Home</p>
 		
 
 		<nav class="header-menu">
@@ -110,8 +113,6 @@
 			  <h1 class="header-author">Chris Zheng</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">This is My Android Home</p>
-			
 			<nav class="header-menu">
 				<ul>
 				
@@ -165,7 +166,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="android中的启动模式（上）"><a href="#android中的启动模式（上）" class="headerlink" title="android中的启动模式（上）"></a>android中的启动模式（上）</h2><hr>
+<h4 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1. 基本介绍"></a>1. 基本介绍</h4><p>大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一个activity也可以用来打开同一台手机但存在在其它应用的activity，比如，你的应用想要发送一份邮件时，可以定义一个intent来执行一个”send”动作并包含一个数据（地址和信息），另一个应用中此时有一个刚好可以处理这种intent的activity就会被打开（如果有多个activity支持同样的intent,那么系统就会让用户自行选择一个）。当email被发送后，你的activity被恢复并且看起来发送邮件的activity好像是你应用的一部分。即使两个activity来自不同的应用，Android系统也能将两个activity保存在同一个任务中来实现这种无缝隙的用户体验。这里，我们就引出了一个概念，究竟何为Android中的任务<strong>Tasks</strong>？它与<strong>启动模式</strong>又有什么关系？所谓的<strong>Back Stack</strong>又是什么？在本篇中，我主要分享一下Tasks与Back Stack的基本介绍，为之后介绍android的启动模式做一下铺垫。当然，若你想详细了解此内容，也可以访问官方文档：<a href="http://developer.android.com/guide/components/tasks-and-back-stack.html" target="_blank" rel="external">Task and Back Stack</a></p>
+<h4 id="2-Tasks与Back-Stack"><a href="#2-Tasks与Back-Stack" class="headerlink" title="2. Tasks与Back Stack"></a>2. Tasks与Back Stack</h4><p>一般说来，<strong>Tasks</strong>是我们在执行某种工作时所交互的activity的集合，这些activity集合按照打开的顺序被放置在同一个栈中，这个栈叫作<strong>Back Stack</strong>(我称为后退栈)。当我们点击到launcher上的图标时，这个图标对应的应用的task则会被置换到前台。若这个应用不存在task，也说明没有打开过或者打开过但被销毁了，那么就会为这个应用创建一个新的task，此时这个应用的MainActivity则会被创建，然后作为根Activity被压入到这个task中。</p>
+<p>当当前的Activity启动了另外一个activity之后，新的activity就会被压入栈顶，并拥有焦点。之前的activity仍然保存在栈中，但是状态是停止的。当activity处于栈中的时候，系统会保留当前界面的状态，当用户按下back键时，当前就activity就会从stack中弹出销毁，之前的一个activity就会从保存的状态中恢复。在栈中的顺序<strong>不能被重新安排</strong>，只允许在栈上执行压入和弹出。当创建新的activity的时候，压入栈中；当按下后退键的时候，弹出栈中。因此，后退栈是一个“后进先出”的结构体。如下图：</p>
+<p><img src="http://img1.tuicool.com/7rymqa.jpg" alt="back_stack"></p>
+<p>当然，如果我们不停的按后退键，栈中的activity会不停的被弹出，直到回到home界面（或者回到创建task的正在运行的activity）。当所有的activity都从栈中移除之后，这个task就被销毁了。</p>
+<p>task可以被整体移到后台，当用户启动了一个新的task，或者按下了home按钮。后台task中的所有activity的状态都是停止的，task的stack中的内容被保存下来，只是task失去了焦点。</p>
+<p>我们需要注意的是：后台可以保持多个Task同时存在，但是，若在同一时刻后台运行了太多的Task，这时系统要能会销毁后台的Activity，以用来回收内存，这会导致activity状态的丢失。</p>
+<h4 id="3-保存Activity的状态"><a href="#3-保存Activity的状态" class="headerlink" title="3. 保存Activity的状态"></a>3. 保存Activity的状态</h4><p>按照前面所说的，当Activity停止时(Stopped)时，系统默认会保存其状态。当我们通过back键回到这个Activity时就会恢复离开时候的界面。当然，当多个Tasks同时保存在后台时，系统也有可能会销毁后台的activity，以回收内存。在这种情况下，系统仍然会知道Activity在task中的位置，当通过back键回到这个Activity时，系统会重新创建(recreate)一个Activity，而不是像之前一样恢复(resume)它，因此，为了不丢失Activity的内容，我们可以通过实现<strong>onSaveInstanceState()</strong>方法来主动保存数据。</p>
+<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h4><p>通过上面对Task与back stack的学习，相信对于一些概念有了更加清楚的认识，现在我们可以总结一下：</p>
+<ul>
+<li><p>activity A 启动activity B，activity A 停止，但是系统还是保留着它的状态。当用户在activity B上按下后退按键，activity A会从保留的状态中的恢复运行。</p>
+</li>
+<li><p>当用户按下home键后离开一个task，这个task的当前activity停止，整个task进入到后台。系统保留着stack中的每一个activity的状态。如果用户点击launcher上的task图标，这个task就会被重新放到前台，task的栈顶activity也会恢复运行。</p>
+</li>
+<li><p>当用户按下后退按钮，栈顶的activity就会从栈中弹出销毁，之前的activity就会恢复运行。activity被销毁后，系统不会保持它的状态。</p>
+</li>
+<li><p>有的activity可以被实例化多次，甚至是从不同的task。</p>
+</li>
+<li><p>当后台中有同时存在多个Task时，系统可能会销毁保存在后台的activity以回收内存，为了不丢失activity中内容，我们可通过onSaveInstanceState()方法保存数据。 </p>
+</li>
+</ul>
+<p>Android系统管理Task，是通过将所有的activity按照启动的顺序压入到一个Task中，若一个Activity被启动多次，会默认创建它的多个实例，然后将新的实例压入。当然，我们也可以打破这种默认的行为。可能你想在你应用的activity启动时开始一个新的任务(而不是放置到当前栈中)；或者，当你启动一个activity，你想把已经运行的它的一个实例提到前台来(而不是创建一个新的实例放在后退栈的顶端)；或者，你希望当用户离开任务时，你的后退栈清除除了根activity以外所有的activity。对于这些行为，我们该如何进行设置？</p>
+<p>好了，今天的分享就到这里，接下来我会针对上面的问题分享Android的启动模式，希望大家持续关注!!!</p>
+
       
 
       
@@ -194,6 +219,11 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/启动模式/">启动模式</a></li></ul>
+	</div>
+
       
 
       
@@ -323,6 +353,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">启动模式</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
