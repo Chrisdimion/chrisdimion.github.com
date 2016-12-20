@@ -8,20 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Android的启动模式（上） | Chris</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="android中的启动模式（上）
-1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一">
+  <meta name="description" content="1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一个activity也可以用来打开同">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的启动模式（上）">
 <meta property="og:url" content="http://yoursite.com/2016/12/19/Android的启动模式（上）/index.html">
 <meta property="og:site_name" content="Chris">
-<meta property="og:description" content="android中的启动模式（上）
-1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一">
+<meta property="og:description" content="1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一个activity也可以用来打开同">
 <meta property="og:image" content="http://img1.tuicool.com/7rymqa.jpg">
-<meta property="og:updated_time" content="2016-12-20T14:16:56.000Z">
+<meta property="og:updated_time" content="2016-12-20T14:20:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的启动模式（上）">
-<meta name="twitter:description" content="android中的启动模式（上）
-1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一">
+<meta name="twitter:description" content="1. 基本介绍大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一个activity也可以用来打开同">
 <meta name="twitter:image" content="http://img1.tuicool.com/7rymqa.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Chris" type="application/atom+xml">
@@ -44,7 +41,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="null" class="js-avatar">
+			<img src="http://upload.jianshu.io/users/upload_avatars/743480/fa0ad27837ee.jpeg?imageMogr/thumbnail/90x90/quality/100" class="js-avatar">
 		</a>
 
 		<hgroup>
@@ -84,13 +81,15 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/Chrisdimion" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="http://weibo.com/zhengquanblog/home?leftnav=1" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xu-jaden/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/7f90fabe3e1f/latest_articles" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="mail" target="_blank" href="/dimion_show@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -107,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="null" class="js-avatar">
+				<img src="http://upload.jianshu.io/users/upload_avatars/743480/fa0ad27837ee.jpeg?imageMogr/thumbnail/90x90/quality/100" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author">Chris Zheng</h1>
@@ -128,13 +127,15 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/Chrisdimion" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="http://weibo.com/zhengquanblog/home?leftnav=1" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xu-jaden/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/7f90fabe3e1f/latest_articles" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="mail" target="_blank" href="/dimion_show@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -166,8 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="android中的启动模式（上）"><a href="#android中的启动模式（上）" class="headerlink" title="android中的启动模式（上）"></a>android中的启动模式（上）</h2><hr>
-<h4 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1. 基本介绍"></a>1. 基本介绍</h4><p>大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一个activity也可以用来打开同一台手机但存在在其它应用的activity，比如，你的应用想要发送一份邮件时，可以定义一个intent来执行一个”send”动作并包含一个数据（地址和信息），另一个应用中此时有一个刚好可以处理这种intent的activity就会被打开（如果有多个activity支持同样的intent,那么系统就会让用户自行选择一个）。当email被发送后，你的activity被恢复并且看起来发送邮件的activity好像是你应用的一部分。即使两个activity来自不同的应用，Android系统也能将两个activity保存在同一个任务中来实现这种无缝隙的用户体验。这里，我们就引出了一个概念，究竟何为Android中的任务<strong>Tasks</strong>？它与<strong>启动模式</strong>又有什么关系？所谓的<strong>Back Stack</strong>又是什么？在本篇中，我主要分享一下Tasks与Back Stack的基本介绍，为之后介绍android的启动模式做一下铺垫。当然，若你想详细了解此内容，也可以访问官方文档：<a href="http://developer.android.com/guide/components/tasks-and-back-stack.html" target="_blank" rel="external">Task and Back Stack</a></p>
+        <h4 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1. 基本介绍"></a>1. 基本介绍</h4><p>大家平时只要懂一点Android知识的话，都一定会知道，一个应用的组成，往往包含了许多的activity组件，每个activity都应该围绕用户的特定动作进行跳转设计。比如说，一个电话通讯录的应用可能有一个总体展示电话录上所有存储的姓名的activity，当用户选择指定的姓名时，可以启动另一个新的activity用来展示选中此姓名的详细内容。当然，一个activity也可以用来打开同一台手机但存在在其它应用的activity，比如，你的应用想要发送一份邮件时，可以定义一个intent来执行一个”send”动作并包含一个数据（地址和信息），另一个应用中此时有一个刚好可以处理这种intent的activity就会被打开（如果有多个activity支持同样的intent,那么系统就会让用户自行选择一个）。当email被发送后，你的activity被恢复并且看起来发送邮件的activity好像是你应用的一部分。即使两个activity来自不同的应用，Android系统也能将两个activity保存在同一个任务中来实现这种无缝隙的用户体验。这里，我们就引出了一个概念，究竟何为Android中的任务<strong>Tasks</strong>？它与<strong>启动模式</strong>又有什么关系？所谓的<strong>Back Stack</strong>又是什么？在本篇中，我主要分享一下Tasks与Back Stack的基本介绍，为之后介绍android的启动模式做一下铺垫。当然，若你想详细了解此内容，也可以访问官方文档：<a href="http://developer.android.com/guide/components/tasks-and-back-stack.html" target="_blank" rel="external">Task and Back Stack</a></p>
 <h4 id="2-Tasks与Back-Stack"><a href="#2-Tasks与Back-Stack" class="headerlink" title="2. Tasks与Back Stack"></a>2. Tasks与Back Stack</h4><p>一般说来，<strong>Tasks</strong>是我们在执行某种工作时所交互的activity的集合，这些activity集合按照打开的顺序被放置在同一个栈中，这个栈叫作<strong>Back Stack</strong>(我称为后退栈)。当我们点击到launcher上的图标时，这个图标对应的应用的task则会被置换到前台。若这个应用不存在task，也说明没有打开过或者打开过但被销毁了，那么就会为这个应用创建一个新的task，此时这个应用的MainActivity则会被创建，然后作为根Activity被压入到这个task中。</p>
 <p>当当前的Activity启动了另外一个activity之后，新的activity就会被压入栈顶，并拥有焦点。之前的activity仍然保存在栈中，但是状态是停止的。当activity处于栈中的时候，系统会保留当前界面的状态，当用户按下back键时，当前就activity就会从stack中弹出销毁，之前的一个activity就会从保存的状态中恢复。在栈中的顺序<strong>不能被重新安排</strong>，只允许在栈上执行压入和弹出。当创建新的activity的时候，压入栈中；当按下后退键的时候，弹出栈中。因此，后退栈是一个“后进先出”的结构体。如下图：</p>
 <p><img src="http://img1.tuicool.com/7rymqa.jpg" alt="back_stack"></p>
@@ -407,27 +407,11 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.jianshu.com/users/7f90fabe3e1f/latest_articles" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">
               <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
             </li>
           
         </ul>
